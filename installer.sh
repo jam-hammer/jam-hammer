@@ -16,6 +16,9 @@ cp -r src/.libs ../love
 
 cd .. # jam-hammer root
 
+echo "Removing love2D sources..."
+rm -rf love2d
+
 
 
 echo "Cloning love.js..."
@@ -36,6 +39,9 @@ cd sff-love
 git submodule update --init --recursive
 cd ..
 
+
+echo "Creating workspace directory..."
+mkdir workspace
 
 
 echo "Done."

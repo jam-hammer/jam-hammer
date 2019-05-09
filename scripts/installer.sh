@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd .. # jam-hammer root
+
 echo "Cloning love2D v0.10.0..."
 git clone https://github.com/jam-hammer/love2d.git
 cd love2d

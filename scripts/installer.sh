@@ -6,6 +6,8 @@ echo "Cloning love2D v0.10.0..."
 git clone https://github.com/jam-hammer/love2d.git
 cd love2d
 
+# TODO: install love dependencies
+
 echo "Configuring and building love2D..."
 ./platform/unix/automagic
 ./configure

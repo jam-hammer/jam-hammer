@@ -13,24 +13,6 @@ local titleX = 66*CONF.cameraZoom
 local winVerticalCenter = (CONF.height * CONF.cameraZoom)/2
 local winWidth = CONF.width*CONF.cameraZoom
 
-function addEntity(ent)
-	table.insert(updateables, ent)
-	table.insert(drawables, ent)
-end
-
-function delEntity(ent)
-	function getIndex(table, element)
-		for index, value in pairs(table) do
-			if value == element then
-				return index
-			end
-		end
-	end
-
-	table.remove(updateables, getIndex(updateables, ent))
-	table.remove(drawables, getIndex(drawables, ent))
-end
-
 function createButtons()
 	local yy = 45
 	local height = 20
@@ -47,10 +29,16 @@ function createButtons()
 				200, function(obj) delEntity(obj) end)
 			addEntity(exportToast)
 		end,
-		xOffset, yy, (CONF.width*CONF.cameraZoom)-xOffset, height) 
+		xOffset, yy, winWidth-xOffset, height) 
 	lineFeed()
 
-	local exportHtmlBtn = Button("Export HTML5", function ()end, xOffset, yy, (CONF.width*CONF.cameraZoom)-xOffset, height) 
+	local exportHtmlBtn = Button("Export HTML5 debug", 
+		function ()
+			local wd = love.filesystem.getWorkingDirectory()
+			os.execute("cd ../love.js/debug && python ../emscripten/tools/file_packager.py game.data --preload "..wd.."/build@/ --js-output=game.js && echo done.")
+			os.execute("cp -r ../love.js/debug build/html5_debug")
+		end, 
+		xOffset, yy, winWidth-xOffset, height) 
 	lineFeed()
 
 	
@@ -87,6 +75,24 @@ function love.graphics.setColor(r,g,b,a)
 	end
 
 	sc(r*255, g*255, b*255, a*255)
+end
+
+function addEntity(ent)
+	table.insert(updateables, ent)
+	table.insert(drawables, ent)
+end
+
+function delEntity(ent)
+	function getIndex(table, element)
+		for index, value in pairs(table) do
+			if value == element then
+				return index
+			end
+		end
+	end
+
+	table.remove(updateables, getIndex(updateables, ent))
+	table.remove(drawables, getIndex(drawables, ent))
 end
 
 function love.filedropped(file)

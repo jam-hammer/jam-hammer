@@ -32,11 +32,20 @@ function createButtons()
 		xOffset, yy, winWidth-xOffset, height) 
 	lineFeed()
 
-	local exportHtmlBtn = Button("Export HTML5 debug", 
+	local exportHtmlBtn = Button("Export HTML5", 
 		function ()
 			local wd = love.filesystem.getWorkingDirectory()
-			os.execute("cd ../love.js/debug && python ../emscripten/tools/file_packager.py game.data --preload "..wd.."/build@/ --js-output=game.js && echo done.")
-			os.execute("cp -r ../love.js/debug build/html5_debug")
+			local tmpDir = "/tmp/jamhammer/"..projName
+			local lovejsDir = "../../love.js/release-compatibility"
+
+			-- Copy the important files into a temp dir
+			os.execute("mkdir -p "..tmpDir.." && rm -rf "..tmpDir.."/* && ls -1 | grep -v build | grep -v *.love | grep -v *.iml | xargs -i cp -r {} "..tmpDir)
+			
+			-- Package the game using love.js. The type is definded by the lovejsDir (debug, release-compatibility or release-performance)
+			os.execute("cd "..lovejsDir.." && python ../emscripten/tools/file_packager.py game.data --preload "..tmpDir.."/@/ --js-output=game.js && echo done.")
+
+			-- Debug type can't be moved from emscripten folder. Both release types can. This next line makes sense if it's a release build.
+			os.execute("mkdir -p build && cp -r "..lovejsDir.." build/html5")
 		end, 
 		xOffset, yy, winWidth-xOffset, height) 
 	lineFeed()

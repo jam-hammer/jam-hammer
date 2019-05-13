@@ -43,6 +43,10 @@ cd sff-love
 git submodule update --init --recursive
 cd ..
 
+echo "Building Jam Hammer UI"
+cd ui
+../love/love .
+
 
 echo "Creating workspace directory..."
 mkdir workspace

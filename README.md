@@ -5,7 +5,8 @@ Linux game development framework.
 ## Installation 
 
 ```bash
-cd scripts
+git clone https://github.com/jam-hammer/jam-hammer.git
+cd jam-hammer/scripts
 ./1-setup.sh
 ./2-installLoveToPath.sh # OPTIONAL STEP
 ``` 

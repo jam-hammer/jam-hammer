@@ -6,7 +6,8 @@ Linux game development framework.
 
 ```bash
 cd scripts
-./install.sh
+./1-setup.sh
+./2-installLoveToPath.sh # OPTIONAL STEP
 ``` 
 
 This will clone and compile LÖVE 0.10.0, love.js and sff-love.  
@@ -16,11 +17,15 @@ The directory of this repository will be the root directory for all of the Jam H
 TODO
 
 ## Create new project
-TODO
+Execute the script `4-newProject.sh` with one argument: the name of the project.  
+```bash
+cd scripts/
+./4-newProject.sh myNewProject
+```
 
 ## Export to HTML5
-TODO
+Use the `Export HTML5` button in Jam Hammer's UI for your project.
 
 ## Update SFF
-Use the script `updateSff.sh` in the `jam-hammer/scripts` directory.  
+Use the script `3-updateSff.sh` in the `jam-hammer/scripts` directory.  
 All new projects will be generated using the updated version of SFF from that point on.

@@ -22,7 +22,9 @@ Execute the script `4-newProject.sh` with one argument: the name of the project.
 ```bash
 cd scripts/
 ./4-newProject.sh myNewProject
-```
+```  
+A new project it's simply a copy of the `sff-love` folder with the specified name in the `workspace` directory.    
+In the future the script might modify some files in `sff-love`.
 
 ## Export to HTML5
 Use the `Export HTML5` button in Jam Hammer's UI for your project.

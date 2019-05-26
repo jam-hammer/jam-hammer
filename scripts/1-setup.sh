@@ -31,7 +31,7 @@ git clone https://github.com/jam-hammer/love.js.git
 echo "Updating submodules..."
 cd love.js
 git submodule update --init --recursive
-cd ..
+cd .. # jam-hammer root
 
 
 
@@ -41,16 +41,18 @@ git clone https://github.com/SuperFastFramework/sff-love
 echo "Updating submodules..."
 cd sff-love
 git submodule update --init --recursive
-cd ..
+cd .. # jam-hammer root
 
 echo "Building Jam Hammer UI"
 cd ui
 ../love/love .
-
+cd .. # jam-hammer root
 
 echo "Creating workspace directory..."
 mkdir workspace
 
+echo "Copying newProject script to root..."
+cp scripts/4-newProject.sh newProject.sh
 
 echo "Done."
 

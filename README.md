@@ -8,7 +8,7 @@ Linux game development framework.
 git clone https://github.com/jam-hammer/jam-hammer.git
 cd jam-hammer/scripts
 ./1-setup.sh
-./2-installLoveToPath.sh # OPTIONAL STEP
+./2-installLoveToPath.sh # OPTIONAL STEP. Adds Löve binary to system path
 ``` 
 
 This will clone and compile LÖVE 0.10.0, love.js and sff-love.  
@@ -18,10 +18,9 @@ The directory of this repository will be the root directory for all of the Jam H
 TODO
 
 ## Create new project
-Execute the script `4-newProject.sh` with one argument: the name of the project.  
+Execute the script `newProject.sh` with one argument: the name of the project.  
 ```bash
-cd scripts/
-./4-newProject.sh myNewProject
+./newProject.sh myNewProject
 ```  
 A new project it's simply a copy of the `sff-love` folder with the specified name in the `workspace` directory.    
 In the future the script might modify some files in `sff-love`.

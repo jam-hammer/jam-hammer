@@ -11,6 +11,7 @@ function PaletteIdx()
 		palettes = Palettes(),
 		font=love.graphics.newFont("assets/pico8.ttf", 12),
 		debounce=true,
+		cellWidth=((CONF.width/16)*CONF.cameraZoom)
 	}
 		
 	function o:keyreleased(key)
@@ -48,7 +49,7 @@ function PaletteIdx()
 		local pal = o.palettes[o.palettes.names[o.palIdx]]
 		local xx = 0
 		local yy = 0
-		local ww = ((CONF.width/8)*CONF.cameraZoom)
+		local ww = o.cellWidth
 
 		local f = love.graphics.getFont()
 		love.graphics.setFont(o.font)
@@ -56,7 +57,7 @@ function PaletteIdx()
 			love.graphics.setColor(pal[i])
 			love.graphics.rectangle("fill", xx, yy, ww, ww)
 
-			love.graphics.setColor(0.5,1,1,1)
+			love.graphics.setColor(0.8,0.7,0.5,1)
 			love.graphics.printf(i, xx, yy+25, ww, "center")
 
 			xx = xx + ww

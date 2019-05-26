@@ -2,9 +2,9 @@ function love.conf(t)
     CONF = {}
     CONF.gameTitle  = "Jam Hammer"
     CONF.version = 0.1
-    CONF.width   = 128
-    CONF.height  = 192
-    CONF.cameraZoom = 4
+    CONF.width   = 256
+    CONF.height  = 320
+    CONF.cameraZoom = 3
 
     --[[ Proceed with caution below this line ]]--
     CONF.windowWidth  = (CONF.width * CONF.cameraZoom)

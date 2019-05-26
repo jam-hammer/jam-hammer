@@ -49,7 +49,7 @@ function SheetIdx ()
 
             if self.col ~= nil then
                 -- tile number:
-                love.graphics.setColor(125, 255, 122, 200)
+                love.graphics.setColor(1, 1, 1, 1)
                 love.graphics.printf(o.idx, 0,(CONF.height*CONF.cameraZoom)-58, CONF.width*CONF.cameraZoom, "center")
                 -- tile number
 

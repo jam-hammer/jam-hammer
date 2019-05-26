@@ -138,7 +138,7 @@ function love.draw(dt)
 	local f = love.graphics.getFont()
 	love.graphics.setFont(font)
 	love.graphics.printf("Project:", titleX, CONF.cameraZoom,   CONF.width, "left")
-	love.graphics.printf(projName,   titleX, 5*CONF.cameraZoom, CONF.width, "left")
+	love.graphics.printf(projName,   titleX, 6*CONF.cameraZoom, CONF.width, "left")
 	love.graphics.setFont(f)
 
 	table.foreach(drawables, function(k,d)

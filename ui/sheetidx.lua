@@ -45,11 +45,16 @@ function SheetIdx ()
         if o.img == nil then
             love.graphics.printf("drag & drop sheet",0,(10*CONF.cameraZoom)+o.yoffset, CONF.width*CONF.cameraZoom, "center")
         else
+            love.graphics.push("all")
+            love.graphics.setColor(0.2,1,1,1)
+            love.graphics.rectangle("fill", 0,o.yoffset,CONF.width*CONF.cameraZoom,CONF.height*CONF.cameraZoom)
+            love.graphics.pop("all")
+
             love.graphics.draw(o.img,0,o.yoffset,0,CONF.cameraZoom,CONF.cameraZoom)
 
             if self.col ~= nil then
                 -- tile number:
-                love.graphics.setColor(1, 1, 1, 1)
+                love.graphics.setColor(1, 1, 1, 0.7)
                 love.graphics.printf(o.idx, 0,(CONF.height*CONF.cameraZoom)-58, CONF.width*CONF.cameraZoom, "center")
                 -- tile number
 

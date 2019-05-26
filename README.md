@@ -15,7 +15,21 @@ This will clone and compile LÖVE 0.10.0, love.js and sff-love.
 The directory of this repository will be the root directory for all of the Jam Hammer projects.
 
 ## Directory structure
-TODO
+```
+├── love
+│   └── # love 0.10.0 compiled binary
+├── love.js
+│   └── # love.js repository for HTML5 export
+├── newProject.sh # script for creating new jam-hammer projects
+├── scripts
+│   └── # Installation script lives here. This folder shouldn't be needed after installation.
+├── sff-love
+│   └── # super fast framework repository
+├── ui
+│   └── # jam-hammer UI project. Each new jam-hammer project will contain a copy of this compiled UI
+└── workspace
+    └── # All jam-hammer projects will live here
+```
 
 ## Create new project
 Execute the script `newProject.sh` with one argument: the name of the project.  

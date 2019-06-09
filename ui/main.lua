@@ -51,7 +51,7 @@ function createButtons()
 			os.execute("mkdir -p "..tmpDir.." && rm -rf "..tmpDir.."/*")
 
 			-- Unzip love win32 dist into tmpDir
-			os.execute("unzip ../love/"..love2dZipVersion ..".zip -d "..tmpDir)
+			os.execute("unzip ../../love/"..love2dZipVersion ..".zip -d "..tmpDir)
 
 			-- Merge .love file into .exe
 			local wd = love.filesystem.getWorkingDirectory()

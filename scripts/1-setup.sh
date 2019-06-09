@@ -20,6 +20,12 @@ cp -r src/.libs ../love
 
 cd .. # jam-hammer root
 
+echo "Downloading love win32.zip for the .exe export..."
+cd love
+wget https://bitbucket.org/rude/love/downloads/love-0.10.0-win32.zip
+
+cd .. # jam-hammer root
+
 echo "Removing love2D sources..."
 rm -rf love2d
 

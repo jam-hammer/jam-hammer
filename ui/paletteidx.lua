@@ -66,6 +66,14 @@ function PaletteIdx()
 				yy = yy + ww
 			end
 		end
+
+		love.graphics.setColor(0,0,0,1)
+		love.graphics.printf(o.palettes.names[o.palIdx], 0, (yy/2)-1, ww*4, "center")
+
+		love.graphics.setColor(1,1,1,1)
+		love.graphics.printf(o.palettes.names[o.palIdx], 0, (yy/2)-3, ww*4, "center")
+
+
 		love.graphics.setFont(f)
 	end
 

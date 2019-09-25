@@ -81,10 +81,10 @@ function createButtons()
 			-- Package the game using love.js. The type is definded by the lovejsDir (debug, release-compatibility or release-performance)
 			os.execute("cd "..lovejsDir.." && python ../emscripten/tools/file_packager.py game.data --preload "..tmpDir.."/@/ --js-output=game.js && echo done.")
 
-			-- Debug type can't be moved from emscripten folder. Both release types can. This next line makes sense if it's a release build.
+			-- "Debug" type can't be moved from emscripten folder. Both "release" types can. This next line makes sense if it's a release build.
 			os.execute("mkdir -p build && cp -r "..lovejsDir.." build/html5")
 
-			showToast("Exported to build/html5/ directory.")
+			showToast("Exported to build/html5/ directory.\nCheck debug build at "..tmpDir)
 		end, 
 		xOffset, yy, winWidth-xOffset, height) 
 	lineFeed()
